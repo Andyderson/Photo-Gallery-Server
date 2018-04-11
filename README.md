@@ -1,13 +1,12 @@
-# Project Name
+# Shamazon
 
-> Project description
+> This is a mockup of Amazon's Product Page. The module addressed in this specific repo is the Photo Gallery.
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/Shamazon/Related-Items-Server
+  - https://github.com/Shamazon/Description-Server
+  - https://github.com/Shamazon/Review-Server
 
 ## Table of Contents
 
