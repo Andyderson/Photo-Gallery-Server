@@ -10,9 +10,13 @@ class Photolist extends React.Component {
     }
     render() {
         return (
-            <div>Wow</div>
+            <div className="photo-list">
+                Testing
+                {this.props.photoList.map((photo, i) => <Photo key={i} photo={photo}/>)}/>
+            </div>
         )
     }
 }
 
 export default Photolist;
+
