@@ -8,9 +8,10 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            photoArray: [],
+            // photoArray: [],
             photo: null,
         }
+        let testArray = []
     }
 
     componentDidMount () {
@@ -23,8 +24,9 @@ class App extends React.Component {
                 }
                 console.log('this is photos', photos)
                 this.setState({
-                    photoArray: photos,
-                    photo: photos[0],
+                    // photoArray: photos,
+                    // photo: photos[0],
+                    photo: <img src="https://puu.sh/A1MuZ/e7cc4ad549.png"/>
                 })
                 console.log('state', this.state.photo);
             })
@@ -38,6 +40,7 @@ class App extends React.Component {
             <div>
                 <Photo photo={this.state.photo}/>
                 <Photolist photos={this.state.photoArray}/>
+                <div className="zoom">{this.state.photo}</div>
             </div>
         )
     }
