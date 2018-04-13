@@ -8,10 +8,10 @@ let db = mongoose.connection;
 let photoSchema = mongoose.Schema({
     id: {type: Number, require: true, unique: true},
     name: String,
-    // html_url: {type: String, require: true, unique: true},
+    // imageUrl: String,
+    imageUrls: Array,
     description: String,
     rating: Number,
-    imageUrl: String, 
   });
   
 let Photo = mongoose.model('Photo', photoSchema);
