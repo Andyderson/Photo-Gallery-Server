@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Photo from './photo.jsx';
 
 class Photolist extends React.Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class Photolist extends React.Component {
     render() {
         return (
             <div className="photo-list">
-                {/* {this.props.photoList.map((photo, i) => <Photo key={i} photo={photo}/>)}/> */}
+                {this.props.photos.map((photo, i) => <Photo key={i} photo={photo} hoverPicture={this.props.hoverPicture}/>)}
             </div>
         )
     }
