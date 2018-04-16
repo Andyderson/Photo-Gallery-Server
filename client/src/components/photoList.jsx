@@ -12,7 +12,7 @@ class Photolist extends React.Component {
     render() {
         return (
             <div className="photo-list">
-                {this.props.photos.map((photo, i) => <Photo key={i} photo={photo} hoverPicture={this.props.hoverPicture}/>)}
+                {this.props.photos.map((photo, i) => <Photo key={i} photo={photo} clickPicture={this.props.clickPicture} hoverPicture={this.props.hoverPicture}/>)}
             </div>
         )
     }
