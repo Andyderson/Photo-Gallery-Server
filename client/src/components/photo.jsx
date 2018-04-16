@@ -13,7 +13,7 @@ class Photo extends React.Component {
     render() {
         return (
             <div> 
-                <img className="photo" onMouseOver={this.props.hoverPicture} src={this.props.photo}/>
+                <img className="photo" onMouseOver={this.props.hoverPicture} onClick={this.props.clickPicture} src={this.props.photo}/>
             </div>
         )
     }
