@@ -47,7 +47,7 @@ class App extends React.Component {
     componentDidMount () {
         axios.get('/photos')
         .then((res) => {
-            console.log('Axios Component GET Success', res.data);
+            console.log('Axios Component GET Success');
             const collection = [];
             const description = [];
             const name = [];
@@ -106,31 +106,40 @@ class App extends React.Component {
                     onMouseOver={this.hoverInstruction}
                     onMouseOut={this.hoverInstruction} 
                     onClick={this.openModal}>
-                    <img className="zoomImage" src={this.state.photo}/> 
-                    {this.state.instruction ? <i>'Roll over image to zoom in'</i> : <i>'Click to open expanded view'</i>}
+                    <div>
+                        <Photolist hoverPicture={this.hoverPicture} photos={this.state.photoArray}/>
+                    </div>
+                    <div className="main">
+                        <img className="zoomImage" src={this.state.photo}/> 
+                        <div className="description">
+                        {this.state.instruction ? 'Roll over image to zoom in' : 'Click to open expanded view'}
+                        </div>
+                    </div>
                 </div>
-                
-                <Photolist className="photoList" hoverPicture={this.hoverPicture} photos={this.state.photoArray}/>
 
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onRequestClose={this.closeModal}
                     style={styles.customStyles}
                     contentLabel="Picture Modal">
-                
-                    <button className="close" onClick={this.closeModal}>x</button>
+                    
+                    <button className="close" onClick={this.closeModal}>X</button>
                     <br></br>
                     <br></br>
-                    <div className="modalDiv">Name: {this.state.name}</div>
-                    <br></br>
-                    <div className="modalDiv">Description: {this.state.description}</div>
-                    <br></br>
-                    <img src={this.state.photo}/>
-                    <div className="modalListContainer">
-                        <Photolist className="modalList" clickPicture={this.clickPicture} photos={this.state.photoArray}/>
+                    <div className="modalContainer">
+                        <img className="modalPic" src={this.state.photo}/>
+                        
+                        <div className="information">
+                            <div className="modalDivName">Name: {this.state.name}</div>
+                            <br></br>
+                            <div className="modalDivDescription">Description: {this.state.description}</div>
+                            <br></br>
+                            <div className="modalListContainer">
+                                <Photolist clickPicture={this.clickPicture} photos={this.state.photoArray}/>
+                            </div>
+                        </div>
                     </div>
                 </Modal>
-
             </div>
         )
     }
