@@ -102,15 +102,16 @@ class App extends React.Component {
     render () {
         return (
             <div>
-                <div className="zoom" 
-                    onMouseOver={this.hoverInstruction}
-                    onMouseOut={this.hoverInstruction} 
-                    onClick={this.openModal}>
+                <div className="main">
                     <div>
                         <Photolist hoverPicture={this.hoverPicture} photos={this.state.photoArray}/>
                     </div>
-                    <div className="main">
-                        <img className="zoomImage" src={this.state.photo}/> 
+                    <div className="zoom">
+                        <img className="zoomImage" 
+                            src={this.state.photo} 
+                            onMouseOver={this.hoverInstruction}
+                            onMouseOut={this.hoverInstruction} 
+                            onClick={this.openModal}/> 
                         <div className="description">
                         {this.state.instruction ? 'Roll over image to zoom in' : 'Click to open expanded view'}
                         </div>
