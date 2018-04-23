@@ -2,8 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Modal from 'react-modal';
+import ReactImageMagnify from 'react-image-magnify';
 import Photo from './photo.jsx';
 import Photolist from './photoList.jsx';
+import Example from './example.jsx';
 import styles from '../styles/styles.js';
 
 class App extends React.Component {
@@ -14,6 +16,7 @@ class App extends React.Component {
             photo: null,
             modalIsOpen: false,
             instruction: true,
+            name: null,
             description: null,
         }
         this.handlePhotos = this.handlePhotos.bind(this);
@@ -25,13 +28,14 @@ class App extends React.Component {
     }
 
     handlePhotos (id) {
-        axios.get('/photos', {
-            params: {id: id}
-        })
+        axios.get(`http://localhost:1337/products/${id}/photos`)
         .then((res) => {
-            console.log('HandlePhotos Axios GET Success', res);
+            console.log('HandlePhotos Axios GET Success', res.data);
             this.setState({
-                photoArray: res.data.photos
+                photoArray: res.data.imageUrls,
+                photo: res.data.imageUrls[0],
+                name: res.data.name,
+                description: res.data.description,
             })
         })
         .catch((error) => {
@@ -39,34 +43,14 @@ class App extends React.Component {
         })
     }
 
-    // componentDidMount () {
-    //     let id = window.location.href.split('/').pop().substring(4) || '1';
-    //     this.handlePhotos(id);
-    // }
-
     componentDidMount () {
-        axios.get('/photos')
-        .then((res) => {
-            console.log('Axios Component GET Success');
-            const collection = [];
-            const description = [];
-            const name = [];
-            for (var i = 0; i < 5; i++) {
-                collection.push(res.data[i].imageUrls[0]);
-                description.push(res.data[i].description);
-                name.push(res.data[i].name);
-                
-                this.setState({
-                    photoArray: collection,
-                    photo: collection[0],
-                    description: description[0],
-                    name: name[0],
-                })
-            }
-        })
-        .catch((err) => {
-            console.log('Axios Component GET Failure', err);
-        });
+        // let id = window.location.href.split('/').pop().substring(4) || '1';
+        const id = this.props.id || 0;
+        this.handlePhotos(id);
+    }
+
+    componentWillReceiveProps () {
+        this.handlePhotos(props.id);
     }
     
     hoverInstruction (e) {
@@ -100,6 +84,9 @@ class App extends React.Component {
     }
 
     render () {
+
+        // const props = {width: 400, height: 250, zoomWidth: 500, img: "1.jpg"};
+
         return (
             <div>
                 <div className="main">
@@ -141,6 +128,8 @@ class App extends React.Component {
                         </div>
                     </div>
                 </Modal>
+
+                {/* <Example/> */}
             </div>
         )
     }
