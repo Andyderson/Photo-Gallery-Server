@@ -4,10 +4,15 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./server/server.js",
     "build": "webpack -d --watch",
-    "seed-database": "node ./helpers/seed.js"
+    "seed-database": "node ./helpers/seed.js",
+    "test": "jest --coverage"
+  },
+  "jest": {
+    "setupFiles": [
+      "./__test__/jestsetup.js"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +21,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "jest": "^22.4.3",
     "webpack": "^3.11.0"
   },
   "dependencies": {
@@ -23,8 +29,11 @@
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "express": "^4.16.2",
     "faker": "^4.1.0",
+    "jest-enzyme": "^6.0.0",
     "jquery": "^3.3.1",
     "mongo": "^0.1.0",
     "mongoose": "^5.0.14",
@@ -37,6 +46,7 @@
     "react-photo-gallery": "^6.0.22",
     "request": "^2.85.0",
     "request-promise": "^4.2.2",
-    "sequelize": "^4.33.3"
+    "sequelize": "^4.33.3",
+    "sinon": "^4.5.0"
   }
 }

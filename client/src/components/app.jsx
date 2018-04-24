@@ -44,7 +44,6 @@ class App extends React.Component {
     }
 
     componentDidMount () {
-        // let id = window.location.href.split('/').pop().substring(4) || '1';
         const id = this.props.id || 0;
         this.handlePhotos(id);
     }
@@ -128,7 +127,6 @@ class App extends React.Component {
                         </div>
                     </div>
                 </Modal>
-
                 {/* <Example/> */}
             </div>
         )
