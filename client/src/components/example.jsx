@@ -48,7 +48,6 @@ import ReactImageMagnify from 'react-image-magnify';
               isHintEnabled: true
             }}/>
           </div>
-  
         </div>
       );
     }
