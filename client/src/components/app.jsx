@@ -83,9 +83,6 @@ class App extends React.Component {
     }
 
     render () {
-
-        // const props = {width: 400, height: 250, zoomWidth: 500, img: "1.jpg"};
-
         return (
             <div>
                 <div className="main">
