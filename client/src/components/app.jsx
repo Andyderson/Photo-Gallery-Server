@@ -44,7 +44,6 @@ class App extends React.Component {
     }
 
     componentDidMount () {
-        // let id = window.location.href.split('/').pop().substring(4) || '1';
         const id = this.props.id || 0;
         this.handlePhotos(id);
     }
@@ -84,9 +83,6 @@ class App extends React.Component {
     }
 
     render () {
-
-        // const props = {width: 400, height: 250, zoomWidth: 500, img: "1.jpg"};
-
         return (
             <div>
                 <div className="main">
@@ -128,7 +124,6 @@ class App extends React.Component {
                         </div>
                     </div>
                 </Modal>
-
                 {/* <Example/> */}
             </div>
         )
