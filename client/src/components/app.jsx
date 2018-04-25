@@ -49,7 +49,7 @@ class App extends React.Component {
     }
 
     componentWillReceiveProps () {
-        this.handlePhotos(props.id);
+        this.handlePhotos(this.props.id);
     }
     
     hoverInstruction (e) {
