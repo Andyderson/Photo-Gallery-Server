@@ -1,13 +1,15 @@
 {
-  "name": "challenge_3",
+  "name": "shamazon_server",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon ./server/server.js",
-    "build": "webpack -d --watch",
-    "seed-database": "node ./helpers/seed.js",
-    "test": "jest --coverage"
+    "start": "node ./server/server.js",
+    "build": "webpack -p",
+    "build-dev": "webpack -d --watch",
+    "seed": "node seed.js",
+    "test": "jest --coverage",
+    "docker": "npm run build && npm run seed & npm start"
   },
   "jest": {
     "setupFiles": [

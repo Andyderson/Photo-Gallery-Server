@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
-mongoose.connect('mongodb://localhost/Shamazon');
+let dockerUrl = 'mongodb://database/Shamazon';
+
+// mongoose.connect('mongodb://localhost/Shamazon');
+// mongoose.connect('mongodb://172.17.0.2/16/Shamazon');
+mongoose.connect(dockerUrl);
 
 let db = mongoose.connection;
 
@@ -11,6 +15,8 @@ let photoSchema = mongoose.Schema({
     imageUrls: Array,
     description: String,
     rating: Number,
+    price: String,
+    category: String,
   });
   
 let Photo = mongoose.model('Product', photoSchema);

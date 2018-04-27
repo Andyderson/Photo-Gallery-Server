@@ -1,13 +1,12 @@
 const customStyles = {
-    content : {
-      top: '50%',
-      left: '50%',
-      marginRight: '50%',
-      transform: 'translate(-50%, -50%)',
-      background: 'white',
-      width: '80%',
-      height: '80%'
-    }
-  };
+  content : {
+    top: '0',
+    left: '0',
+    right: '0',
+    bottom: '0',
+    background: 'rgba(0, 0, 0, 0.75)',
+    border_radius: '3px',
+  }
+};
 
 exports.customStyles = customStyles;
