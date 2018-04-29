@@ -1,8 +1,6 @@
 .photo {
     height: 4em;
     border-radius: 3px;
-    /* padding-left: 1px; */
-    /* padding-right: 1px; */
 }
 
 .photo:hover {
@@ -12,11 +10,6 @@
 
 .modalContainer {
     display: flex;
-}
-
-.information {
-    /* display: flex; */
-    /* flex-direction: row; */
 }
 
 .modalDivName {
@@ -40,6 +33,7 @@
     display: flex;
     justify-content: flex-end;
     padding-right: 40px;
+    border-radius: 3px;
 }
 
 .modalListContainer {
@@ -97,6 +91,7 @@
 
 .shamazon {
     height: 3em;
+    margin-top: -10px;
 }
 
 .perimeter {

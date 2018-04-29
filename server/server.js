@@ -14,8 +14,9 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 app.listen(1337, () => { console.log('Serving up pictures on port 1337!') });
 
 app.get('/products/:id/photos', (req, res) => {
-    console.log('Express Get Success', res.data);
+  // console.log('Express Get Success', res.data);
     const id = Number(req.params.id);
+    console.log('this is id', id);
     mongodb.Photo.findOne({id: id})
     .then(photos => res.json(photos));
   })
