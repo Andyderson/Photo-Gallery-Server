@@ -5,7 +5,6 @@ import Modal from 'react-modal';
 import ReactImageMagnify from 'react-image-magnify';
 import Photo from './photo.jsx';
 import Photolist from './photoList.jsx';
-import Example from './example.jsx';
 import styles from '../styles/styles.js';
 
 class App extends React.Component {
