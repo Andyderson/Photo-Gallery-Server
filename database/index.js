@@ -1,19 +1,25 @@
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
-mongoose.connect('mongodb://localhost/Shamazon');
+const dockerUrl = 'mongodb://database/Shamazon';
 
-let db = mongoose.connection;
+// mongoose.connect('mongodb://localhost/Shamazon');
+// mongoose.connect('mongodb://172.17.0.2/16/Shamazon');
+mongoose.connect(dockerUrl);
 
-let photoSchema = mongoose.Schema({
-    id: {type: Number, require: true, unique: true},
-    name: String,
-    imageUrls: Array,
-    description: String,
-    rating: Number,
-  });
-  
-let Photo = mongoose.model('Product', photoSchema);
-  
+const db = mongoose.connection;
+
+const photoSchema = mongoose.Schema({
+  id: { type: Number, require: true, unique: true },
+  name: String,
+  imageUrls: Array,
+  description: String,
+  rating: Number,
+  price: String,
+  category: String,
+});
+
+const Photo = mongoose.model('Product', photoSchema);
+
 module.exports.Photo = Photo;
 module.exports.db = db;

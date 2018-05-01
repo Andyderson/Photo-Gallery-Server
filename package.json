@@ -1,13 +1,17 @@
 {
-  "name": "challenge_3",
+  "name": "shamazon_server",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon ./server/server.js",
-    "build": "webpack -d --watch",
-    "seed-database": "node ./helpers/seed.js",
-    "test": "jest --coverage"
+    "start": "node ./server/server.js",
+    "build": "webpack -p",
+    "build-dev": "webpack -d --watch",
+    "seed": "node seed.js",
+    "test": "jest --coverage",
+    "lint": "eslint .",
+    "fix": "eslint . --fix",
+    "docker": "npm run build && npm run seed & npm start"
   },
   "jest": {
     "setupFiles": [
@@ -21,6 +25,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "eslint-plugin-react": "^7.7.0",
     "jest": "^22.4.3",
     "webpack": "^3.11.0"
   },
@@ -31,6 +36,10 @@
     "cors": "^2.8.4",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
     "express": "^4.16.2",
     "faker": "^4.1.0",
     "jest-enzyme": "^6.0.0",

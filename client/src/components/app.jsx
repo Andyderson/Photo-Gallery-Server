@@ -27,7 +27,7 @@ class App extends React.Component {
     }
 
     handlePhotos (id) {
-        axios.get(`http://localhost:1337/products/${id}/photos`)
+        axios.get(`/products/${id}/photos`)
         .then((res) => {
             console.log('HandlePhotos Axios GET Success', res.data);
             this.setState({

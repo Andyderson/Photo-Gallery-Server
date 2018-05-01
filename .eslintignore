@@ -1,0 +1,6 @@
+**/bundle.js
+/webpack.config.js
+/data.js
+/data.json
+/coverage
+/__test__
