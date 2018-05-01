@@ -2,10 +2,10 @@ import enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 enzyme.configure({
-    adapter: new Adapter()
+  adapter: new Adapter(),
 });
 
-//<<<<<<<<<<<<< Package JSON addons >>>>>>>>>>>>>>>>>
+// <<<<<<<<<<<<< Package JSON addons >>>>>>>>>>>>>>>>>
 // "snapshotSerializers": [
 //     "enzyme-to-json/serializer"
 //   ],

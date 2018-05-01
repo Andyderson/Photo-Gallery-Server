@@ -7,17 +7,15 @@ import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
 describe('<Photolist />', () => {
-    it('should render photos when props are received', () => {
-        const photos = [{
-            id: 7,
-            photoArray: ['imageUrls'],
-            photo: ['imageUrl'],
-            name: 'Test',
-            description: 'Testing',
-        }];
-        const wrapper = enzyme.shallow(
-            <Photolist photos={photos} />
-        );
-        expect(wrapper.find('div').length).toBeGreaterThan(0);
-    });
+  it('should render photos when props are received', () => {
+    const photos = [{
+      id: 7,
+      photoArray: ['imageUrls'],
+      photo: ['imageUrl'],
+      name: 'Test',
+      description: 'Testing',
+    }];
+    const wrapper = enzyme.shallow(<Photolist photos={photos} />);
+    expect(wrapper.find('div').length).toBeGreaterThan(0);
+  });
 });
