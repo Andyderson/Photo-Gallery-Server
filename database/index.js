@@ -3,9 +3,8 @@ mongoose.Promise = require('bluebird');
 
 const dockerUrl = 'mongodb://database/Shamazon';
 
-// mongoose.connect('mongodb://localhost/Shamazon');
-// mongoose.connect('mongodb://172.17.0.2/16/Shamazon');
-mongoose.connect(dockerUrl);
+mongoose.connect('mongodb://localhost/Shamazon');
+// mongoose.connect(dockerUrl);
 
 const db = mongoose.connection;
 
