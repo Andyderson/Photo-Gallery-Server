@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../client/dist')));
-app.listen(1337, () => { console.log('Serving up pictures on port 1337!'); });
+app.listen(1338, () => { console.log('Serving up pictures on port 1338!'); });
 
 app.get('/products/:id/photos', (req, res) => {
   console.log('Express Get Success', res.data);
