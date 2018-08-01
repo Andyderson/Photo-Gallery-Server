@@ -1,6 +1,6 @@
 # Shamazon
 
-> Amazon inpsired product page web application microservice
+> Amazon inspired product page web application microservice
 
 https://youtu.be/9-IfeI7_-J4
 
